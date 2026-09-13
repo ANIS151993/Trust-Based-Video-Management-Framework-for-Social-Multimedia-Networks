@@ -1,0 +1,30 @@
+# Sensitive / local-only
+Prompt.md
+*.pat
+*.token
+.env
+Anis_Chowdhury_PhD_CV.pdf
+
+# Lab data/output (regenerate with lab/run_lab.py; not checked in)
+lab/data/generated/
+
+# LaTeX build artifacts
+paper/*.aux
+paper/*.log
+paper/*.out
+paper/*.toc
+paper/*.bbl
+paper/*.blg
+paper/*.fls
+paper/*.fdb_latexmk
+paper/*.synctex.gz
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+lab/venv/
+lab/.venv/
+
+# OS
+.DS_Store

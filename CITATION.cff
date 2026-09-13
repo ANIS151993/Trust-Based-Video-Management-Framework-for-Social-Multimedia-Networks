@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+title: "Trust-Based Video Management Framework for Social Multimedia Networks"
+authors:
+  - family-names: Chowdhury
+    given-names: Md Anisur Rahman
+    affiliation: "Gannon University"
+    orcid: ""
+  - family-names: Tweneboah-Koduah
+    given-names: Samuel
+    affiliation: "Campbellsville University"
+date-released: 2026-01-01
+url: "https://github.com/ANIS151993/Trust-Based-Video-Management-Framework-for-Social-Multimedia-Networks"
+repository-code: "https://github.com/ANIS151993/Trust-Based-Video-Management-Framework-for-Social-Multimedia-Networks"
+license: MIT
+keywords:
+  - trust-based systems
+  - social multimedia networks
+  - content moderation
+  - deep learning
+  - VGG16
+  - ResNet50
+  - video security
