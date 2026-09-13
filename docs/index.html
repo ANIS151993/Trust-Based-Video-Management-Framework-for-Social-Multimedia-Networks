@@ -1,21 +1,31 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Trust-Based Video Management Framework for Social Multimedia Networks</title>
-<meta name="description" content="A proactive, AI-driven trust and content-moderation framework for Social Multimedia Networks — dynamic trust scoring, VGG16/ResNet50 weapon classification, and secure video delivery.">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trust-Based VMF Research Portal | IEEE-Format Paper &amp; Reproducible Lab</title>
+<meta name="description" content="Research portal for the Trust-Based Video Management Framework for Social Multimedia Networks: dynamic trust scoring, VGG16/ResNet50 weapon classification, secure delivery, and a reproducible validation lab.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛡️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/theme.css">
-<meta property="og:title" content="Trust-Based Video Management Framework for Social Multimedia Networks">
-<meta property="og:description" content="Proactive AI content moderation: dynamic trust scoring + CNN weapon classification + secure delivery.">
+<meta property="og:title" content="Trust-Based Video Management Framework — Research Portal">
+<meta property="og:description" content="Dynamic trust scoring + CNN weapon classification + secure delivery, with a reproducible open-source validation lab.">
 <meta property="og:image" content="assets/img/hero-overview.jpg">
 </head>
 <body>
+<div class="scroll-progress" id="scrollProgress"></div>
 
-<nav class="nav">
-  <div class="container nav-inner">
-    <a href="#top" class="brand"><span class="brand-badge">🛡️</span> Trust-Based VMF</a>
+<nav class="site-nav" id="siteNav">
+  <div class="nav-inner">
+    <a class="nav-brand" href="#top">
+      <span class="nav-brand-icon">TVM</span>
+      <span class="nav-brand-text">Trust-Based VMF</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="Toggle navigation" onclick="toggleNav()">
+      <span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span>
+    </button>
     <ul class="nav-links" id="nav-links">
       <li><a href="#overview">Overview</a></li>
       <li><a href="#architecture">Architecture</a></li>
@@ -26,237 +36,412 @@
       <li><a href="#video">Video</a></li>
       <li><a href="#team">Team</a></li>
     </ul>
-    <div class="nav-actions">
-      <button class="icon-btn" id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
-      <button class="nav-toggle" id="nav-toggle" aria-label="Menu">☰</button>
-    </div>
   </div>
 </nav>
 
 <header class="hero" id="top">
-  <div class="container hero-grid">
-    <div class="reveal visible">
-      <span class="eyebrow">IEEE Research · Social Multimedia Security</span>
-      <h1>Stop harmful video content <em>before</em> it spreads.</h1>
-      <p class="lead">A trust-based video management framework that fuses dynamic user-trust
-        scoring with deep-learning weapon classification (VGG16 / ResNet50) and cryptographic
-        content integrity — shifting moderation from reactive to proactive.</p>
-      <div class="btn-row">
-        <a class="btn btn-primary" href="https://github.com/ANIS151993/Trust-Based-Video-Management-Framework-for-Social-Multimedia-Networks" target="_blank" rel="noopener">⭐ View on GitHub</a>
-        <a class="btn btn-ghost" href="#paper">📄 Read the Paper</a>
-        <a class="btn btn-ghost" href="#lab">🧪 Run the Lab</a>
+  <div class="hero-inner">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow-row">
+          <span class="eyebrow accent">IEEE-Format Research</span>
+          <span class="eyebrow">Social Multimedia Security</span>
+        </div>
+        <h1 class="hero-title">Stop harmful video content before it spreads.</h1>
+        <p class="hero-subtitle">A trust-based video management framework that fuses dynamic user-trust scoring
+          with deep-learning weapon classification (VGG16 / ResNet50) and cryptographic content integrity —
+          shifting moderation from reactive to proactive.</p>
+
+        <div class="author-block">
+          <p class="author-line">Md Anisur Rahman Chowdhury<sup>1*</sup>, Samuel Tweneboah-Koduah<sup>2</sup></p>
+          <p class="affiliation-line">Dept. of Computer and Information Science, Gannon University, Erie, PA, USA<sup>1</sup></p>
+          <p class="affiliation-line">College of Business and Enterprise, Campbellsville University, KY, USA<sup>2</sup></p>
+          <div class="profile-row">
+            <span class="profile-pill">📍 Erie, PA · USA</span>
+            <span class="profile-pill">✉️ engr.aanis@gmail.com</span>
+          </div>
+        </div>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://github.com/ANIS151993/Trust-Based-Video-Management-Framework-for-Social-Multimedia-Networks" target="_blank" rel="noopener">⭐ View on GitHub</a>
+          <a class="btn btn-secondary" href="#paper">📄 Read the Paper</a>
+          <a class="btn btn-ghost" href="#lab">🧪 Run the Lab</a>
+        </div>
       </div>
-      <div class="hero-badges">
-        <span class="badge">VGG16 · ResNet50</span>
-        <span class="badge">Dynamic Trust Scoring</span>
-        <span class="badge">SHA-256 Integrity</span>
-        <span class="badge">Digital Watermarking</span>
-        <span class="badge">Community Moderation</span>
-      </div>
-    </div>
-    <div class="reveal visible">
-      <div class="hero-media"><img src="assets/img/hero-overview.jpg" alt="Trust-Based Video Management Framework overview infographic"></div>
+
+      <aside class="hero-sidecard">
+        <h3>Pipeline at a glance</h3>
+        <p>Every upload is scored and classified before it ever reaches the feed.</p>
+        <div class="code-block"><span class="cmt"># decision pipeline</span><br>
+upload() -&gt; extract_frames()<br>
+score = trust_engine(H,Q,F,C,V)<br>
+threat = cnn_classifier(frames)<br>
+if score &gt;= 75: auto_publish()<br>
+elif score &gt;= 50: expedited_review()<br>
+else: auto_reject()<br>
+secure_delivery(hash, watermark)</div>
+        <div class="hero-actions" style="margin-top:16px">
+          <a class="btn btn-dark btn-block" href="#lab">Open the validation lab →</a>
+        </div>
+      </aside>
     </div>
   </div>
 </header>
 
-<section id="overview">
+<section class="section" id="overview">
   <div class="container">
-    <span class="eyebrow">Why this exists</span>
+    <p class="section-kicker">Why This Exists</p>
     <h2 class="section-title">Reactive moderation is too slow</h2>
-    <p class="section-sub">Existing platforms detect harmful content only after it has already spread. This framework proactively evaluates both the uploader and the content itself, before publication.</p>
-    <table class="compare-table reveal">
-      <thead><tr><th>Problem</th><th>This framework's answer</th></tr></thead>
-      <tbody>
-        <tr><td class="tag-bad">Harmful content spreads before review</td><td class="tag-good">CNN weapon detection runs at upload time</td></tr>
-        <tr><td class="tag-bad">Trust & content analysis run separately</td><td class="tag-good">Trust scores and classification results feed each other live</td></tr>
-        <tr><td class="tag-bad">Manual moderation can't scale</td><td class="tag-good">Automated 3-tier routing cuts manual review load</td></tr>
-        <tr><td class="tag-bad">No tamper detection in delivery</td><td class="tag-good">SHA-256 hashing + watermarking + periodic checks</td></tr>
-        <tr><td class="tag-bad">Users have no stake in platform safety</td><td class="tag-good">Trust-weighted voting & reputation incentives</td></tr>
-      </tbody>
-    </table>
-  </div>
-</section>
+    <p class="section-subtitle">Existing platforms detect harmful content only after it has already spread. This
+      framework proactively evaluates both the uploader and the content itself, before publication.</p>
 
-<section id="architecture" style="background:var(--surface-2)">
-  <div class="container">
-    <span class="eyebrow">System design</span>
-    <h2 class="section-title">Three modules, one decision engine</h2>
-    <p class="section-sub">Each module performs a specialized function while continuously exchanging information with the others to produce a single, context-aware moderation decision.</p>
-
-    <div class="grid grid-3" style="margin-top:22px">
-      <div class="card module-card reveal">
-        <h3>🎯 Trust Evaluation Engine</h3>
-        <p>Computes dynamic per-user trust scores from historical reliability, content quality, community feedback, consistency, and violation history.</p>
-      </div>
-      <div class="card module-card reveal">
-        <h3>🧠 Weapon Classification System</h3>
-        <p>Transfer-learning CNNs (VGG16 / ResNet50) scan extracted video frames for AK-47, gun, knife, sickle, and sword imagery.</p>
-      </div>
-      <div class="card module-card reveal">
-        <h3>🔐 Secure Delivery Layer</h3>
-        <p>SHA-256 hashing, invisible digital watermarking, and 30-second periodic integrity checks throughout playback.</p>
-      </div>
-    </div>
-
-    <div class="formula-box reveal">
-      T<sub>u</sub> = w₁·H + w₂·Q + w₃·F + w₄·C − w₅·V
-      <div style="font-size:.8rem;color:var(--ink-2);margin-top:8px;font-weight:600">
-        H = Historical Reliability · Q = Content Quality · F = Feedback · C = Consistency · V = Violation Penalty
-      </div>
-    </div>
-
-    <div class="grid grid-3">
-      <div class="card reveal"><h3>✅ High Trust (T ≥ 75)</h3><p>Auto-published with minimal delay.</p></div>
-      <div class="card reveal"><h3>🕓 Medium Trust (50–75)</h3><p>Queued for expedited human review.</p></div>
-      <div class="card reveal"><h3>⛔ Low Trust (&lt; 50)</h3><p>Intensively reviewed or auto-rejected.</p></div>
-    </div>
-
-    <div class="reveal" style="margin-top:26px;text-align:center">
-      <img src="assets/img/architecture.png" alt="System architecture diagram" style="max-width:520px;margin:0 auto;border-radius:12px;border:1px solid var(--border)">
-    </div>
-  </div>
-</section>
-
-<section id="results">
-  <div class="container">
-    <span class="eyebrow">Experimental results</span>
-    <h2 class="section-title">VGG16 vs. ResNet50 — a decisive gap</h2>
-    <p class="section-sub">Reported results from the original research (paper, Section IV).</p>
-
-    <div class="grid grid-2" style="grid-template-columns:1.3fr 1fr;align-items:start;gap:24px">
-      <table class="compare-table reveal">
-        <thead><tr><th>Metric</th><th>VGG16</th><th>ResNet50</th></tr></thead>
+    <div class="card is-reveal" style="margin-top:26px;padding:0;overflow:hidden">
+      <table class="stats-table" style="margin-top:0">
+        <thead><tr><th>Problem</th><th>This framework's answer</th></tr></thead>
         <tbody>
-          <tr><td>Training Accuracy</td><td>100%</td><td>100%</td></tr>
-          <tr><td><strong>Testing Accuracy</strong></td><td><strong class="tag-good">100%</strong></td><td><strong class="tag-bad">24%</strong></td></tr>
-          <tr><td>Training Loss</td><td>0.003</td><td>0.002</td></tr>
-          <tr><td>Testing Loss</td><td>0.005</td><td>2.87</td></tr>
-          <tr><td>Convergence</td><td>Epoch 5</td><td>Epoch 7</td></tr>
-          <tr><td>Generalization</td><td class="tag-good">Excellent</td><td class="tag-bad">Poor (overfit)</td></tr>
+          <tr><td class="tag-bad">Harmful content spreads before review</td><td class="tag-good">CNN weapon detection runs at upload time</td></tr>
+          <tr><td class="tag-bad">Trust &amp; content analysis run separately</td><td class="tag-good">Trust scores and classification results feed each other live</td></tr>
+          <tr><td class="tag-bad">Manual moderation can't scale</td><td class="tag-good">Automated 3-tier routing cuts manual review load</td></tr>
+          <tr><td class="tag-bad">No tamper detection in delivery</td><td class="tag-good">SHA-256 hashing + watermarking + periodic checks</td></tr>
+          <tr><td class="tag-bad">Users have no stake in platform safety</td><td class="tag-good">Trust-weighted voting &amp; reputation incentives</td></tr>
         </tbody>
       </table>
-      <div class="card reveal">
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="architecture">
+  <div class="container">
+    <p class="section-kicker">System Design</p>
+    <h2 class="section-title">Three modules, one decision engine</h2>
+    <p class="section-subtitle">Each module performs a specialized function while continuously exchanging
+      information with the others to produce a single, context-aware moderation decision.</p>
+
+    <div class="architecture-grid">
+      <div>
+        <div class="overview-grid" style="margin-top:0;grid-template-columns:1fr">
+          <article class="card module-card is-reveal">
+            <h3>🎯 Trust Evaluation Engine</h3>
+            <p>Computes dynamic per-user trust scores from historical reliability, content quality, community
+              feedback, consistency, and violation history.</p>
+          </article>
+          <article class="card module-card is-reveal">
+            <h3>🧠 Weapon Classification System</h3>
+            <p>Transfer-learning CNNs (VGG16 / ResNet50) scan extracted video frames for AK-47, gun, knife,
+              sickle, and sword imagery.</p>
+          </article>
+          <article class="card module-card is-reveal">
+            <h3>🔐 Secure Delivery Layer</h3>
+            <p>SHA-256 hashing, invisible digital watermarking, and 30-second periodic integrity checks
+              throughout playback.</p>
+          </article>
+        </div>
+      </div>
+
+      <figure class="figure-card is-reveal" style="margin:0">
+        <img src="assets/img/architecture.png" alt="System architecture diagram">
+        <figcaption style="margin-top:12px;color:var(--ink-soft);font-size:0.88rem">System architecture integrating
+          trust evaluation, weapon classification, and secure delivery modules.</figcaption>
+      </figure>
+    </div>
+
+    <div class="formula-box is-reveal">
+      T<sub>u</sub> = w₁·H + w₂·Q + w₃·F + w₄·C − w₅·V
+      <div class="formula-legend">H = Historical Reliability · Q = Content Quality · F = Feedback · C = Consistency · V = Violation Penalty</div>
+    </div>
+
+    <div class="overview-grid">
+      <article class="card is-reveal"><h3>✅ High Trust (T ≥ 75)</h3><p>Auto-published with minimal delay.</p></article>
+      <article class="card is-reveal"><h3>🕓 Medium Trust (50–75)</h3><p>Queued for expedited human review.</p></article>
+      <article class="card is-reveal"><h3>⛔ Low Trust (&lt; 50)</h3><p>Intensively reviewed or auto-rejected.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="results">
+  <div class="container">
+    <p class="section-kicker">Experimental Results</p>
+    <h2 class="section-title">VGG16 vs. ResNet50 — a decisive gap</h2>
+    <p class="section-subtitle">Reported results from the original research (paper, Section IV).</p>
+
+    <div class="split-callout">
+      <div class="card is-reveal" style="padding:0;overflow:hidden">
+        <table class="stats-table" style="margin-top:0">
+          <thead><tr><th>Metric</th><th>VGG16</th><th>ResNet50</th></tr></thead>
+          <tbody>
+            <tr><td>Training Accuracy</td><td>100%</td><td>100%</td></tr>
+            <tr class="highlight"><td><strong>Testing Accuracy</strong></td><td class="tag-good">100%</td><td class="tag-bad">24%</td></tr>
+            <tr><td>Training Loss</td><td>0.003</td><td>0.002</td></tr>
+            <tr><td>Testing Loss</td><td>0.005</td><td>2.87</td></tr>
+            <tr><td>Convergence</td><td>Epoch 5</td><td>Epoch 7</td></tr>
+            <tr><td>Generalization</td><td class="tag-good">Excellent</td><td class="tag-bad">Poor (overfit)</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="card is-reveal">
         <h3>Why VGG16 wins here</h3>
-        <p>ResNet50's 50-layer depth memorized the training set instead of learning generalizable weapon features. VGG16's simpler 16-layer architecture matched the dataset's scale and generalized almost perfectly — a reminder that model complexity should fit the data, not the leaderboard.</p>
+        <p>ResNet50's 50-layer depth memorized the training set instead of learning generalizable weapon features.
+          VGG16's simpler 16-layer architecture matched the dataset's scale and generalized almost perfectly — a
+          reminder that model complexity should fit the data, not the leaderboard.</p>
       </div>
     </div>
 
-    <h3 style="margin-top:40px">Framework-level simulation</h3>
-    <div class="grid grid-3">
-      <div class="card stat reveal"><div class="num good" data-count="60" data-suffix="%">0%</div><div class="label">Manual moderation workload reduced</div></div>
-      <div class="card stat reveal"><div class="num blue" data-count="85" data-suffix="%">0%</div><div class="label">Faster harmful-content detection</div></div>
-      <div class="card stat reveal"><div class="num good" data-count="99.7" data-decimals="1" data-suffix="%">0%</div><div class="label">Weapon-detection recall</div></div>
-      <div class="card stat reveal"><div class="num blue" data-count="92" data-suffix="%">0%</div><div class="label">User satisfaction (n=500 simulated)</div></div>
-      <div class="card stat reveal"><div class="num warning" data-count="2.1" data-decimals="1" data-suffix="%">0%</div><div class="label">False positive rate</div></div>
-      <div class="card stat reveal"><div class="num critical" data-count="0.3" data-decimals="1" data-suffix="%">0%</div><div class="label">False negative rate</div></div>
+    <h3 style="margin-top:40px;font-family:var(--font-serif);color:var(--brand);font-size:1.6rem">Framework-level simulation</h3>
+    <div class="metric-grid">
+      <div class="metric-card is-reveal"><strong data-count="60" data-suffix="%">0%</strong><span>Manual moderation workload reduced</span></div>
+      <div class="metric-card is-reveal"><strong data-count="85" data-suffix="%">0%</strong><span>Faster harmful-content detection</span></div>
+      <div class="metric-card is-reveal"><strong data-count="99.7" data-decimals="1" data-suffix="%">0%</strong><span>Weapon-detection recall</span></div>
+      <div class="metric-card is-reveal"><strong data-count="92" data-suffix="%">0%</strong><span>User satisfaction (n=500 simulated)</span></div>
+      <div class="metric-card is-reveal"><strong data-count="2.1" data-decimals="1" data-suffix="%">0%</strong><span>False positive rate</span></div>
+      <div class="metric-card is-reveal"><strong data-count="0.3" data-decimals="1" data-suffix="%">0%</strong><span>False negative rate</span></div>
     </div>
 
-    <div class="card reveal" style="margin-top:26px">
-      <h3>🧪 Independent reproducibility check</h3>
-      <p>The <a href="#lab">Validation Lab</a> in this repo re-runs the same transfer-learning pipeline and trust-routing logic against an open, synthetic dataset so anyone can verify the methodology — see the numbers it produces in <code>lab/results/summary.json</code> and Section IV-E of the paper.</p>
+    <div class="quote-box is-reveal">
+      <strong>🧪 Independent reproducibility check:</strong> the <a href="#lab">Validation Lab</a> in this repo
+      re-runs the same transfer-learning pipeline and trust-routing logic against an open, synthetic dataset.
+      On that testbed: <strong>VGG16 96.7%</strong> / <strong>ResNet50 97.8%</strong> test accuracy (both
+      generalize well at this smaller synthetic scale — a different, honestly-reported outcome from the dramatic
+      gap above, which was measured on the original, non-public dataset), plus a 52.5% / 46.2% / 1.3%
+      auto-publish / review / reject split and 53.8% simulated workload reduction over 10,000 uploads. Full
+      numbers in <code>lab/results/summary.json</code>; details in Section IV-F of the paper.
     </div>
   </div>
 </section>
 
-<section id="visualizations" style="background:var(--surface-2)">
+<section class="section section-alt" id="visualizations">
   <div class="container">
-    <span class="eyebrow">Explore the data</span>
+    <p class="section-kicker">Explore The Data</p>
     <h2 class="section-title">Interactive visualization gallery</h2>
-    <p class="section-sub">Generated directly from the lab's own output — click any chart to enlarge. Regenerate them yourself with <code>python lab/run_lab.py</code>.</p>
+    <p class="section-subtitle">Generated directly from the lab's own output — click any chart to enlarge.
+      Regenerate them yourself with <code>python lab/run_lab.py</code>.</p>
 
-    <div class="gallery reveal" id="gallery">
-      <figure><img src="assets/img/charts/distplot_trust_scores.png" alt="Distribution of simulated trust scores"><figcaption>Trust-score distribution (DistPlot)</figcaption></figure>
-      <figure><img src="assets/img/charts/pie_content_routing.png" alt="Pie chart of content routing decisions"><figcaption>Content routing decisions (Pie)</figcaption></figure>
-      <figure><img src="assets/img/charts/violin_trust_factors.png" alt="Violin plot of trust score components"><figcaption>Trust-component spread (ViolinPlot)</figcaption></figure>
-      <figure><img src="assets/img/charts/heatmap_trust_correlation.png" alt="Heatmap of trust factor correlations"><figcaption>Trust-factor correlation (HeatMap)</figcaption></figure>
-      <figure><img src="assets/img/charts/pairplot_trust_factors.png" alt="Pairplot of trust factors"><figcaption>Pairwise trust factors (PairPlot)</figcaption></figure>
-      <figure><img src="assets/img/charts/jointplot_quality_vs_trust.png" alt="Jointplot of content quality vs trust score"><figcaption>Quality vs. trust (JointPlot)</figcaption></figure>
-      <figure><img src="assets/img/charts/training_curves.png" alt="Training and validation curves"><figcaption>Training/validation curves</figcaption></figure>
-      <figure><img src="assets/img/charts/confusion_matrix_vgg16.png" alt="VGG16 confusion matrix"><figcaption>VGG16 confusion matrix</figcaption></figure>
-      <figure><img src="assets/img/charts/comparison_bar_test_accuracy.png" alt="Bar chart comparing VGG16 and ResNet50 test accuracy"><figcaption>VGG16 vs. ResNet50 — validation testbed</figcaption></figure>
+    <div class="chart-grid">
+      <figure class="chart-card is-reveal"><img src="assets/img/charts/distplot_trust_scores.png" alt="Distribution of simulated trust scores"><figcaption>Trust-score distribution (DistPlot)</figcaption></figure>
+      <figure class="chart-card is-reveal"><img src="assets/img/charts/pie_content_routing.png" alt="Pie chart of content routing decisions"><figcaption>Content routing decisions (Pie)</figcaption></figure>
+      <figure class="chart-card is-reveal"><img src="assets/img/charts/violin_trust_factors.png" alt="Violin plot of trust score components"><figcaption>Trust-component spread (ViolinPlot)</figcaption></figure>
+      <figure class="chart-card is-reveal"><img src="assets/img/charts/heatmap_trust_correlation.png" alt="Heatmap of trust factor correlations"><figcaption>Trust-factor correlation (HeatMap)</figcaption></figure>
+      <figure class="chart-card is-reveal"><img src="assets/img/charts/pairplot_trust_factors.png" alt="Pairplot of trust factors"><figcaption>Pairwise trust factors (PairPlot)</figcaption></figure>
+      <figure class="chart-card is-reveal"><img src="assets/img/charts/jointplot_quality_vs_trust.png" alt="Jointplot of content quality vs trust score"><figcaption>Quality vs. trust (JointPlot)</figcaption></figure>
+      <figure class="chart-card is-reveal"><img src="assets/img/charts/training_curves.png" alt="Training and validation curves"><figcaption>Training / validation curves</figcaption></figure>
+      <figure class="chart-card is-reveal"><img src="assets/img/charts/confusion_matrix_vgg16.png" alt="VGG16 confusion matrix"><figcaption>VGG16 confusion matrix</figcaption></figure>
+      <figure class="chart-card is-reveal"><img src="assets/img/charts/comparison_bar_test_accuracy.png" alt="Bar chart comparing VGG16 and ResNet50 test accuracy"><figcaption>VGG16 vs. ResNet50 — validation testbed</figcaption></figure>
     </div>
   </div>
 </section>
 
-<section id="lab">
+<section class="section" id="lab">
   <div class="container">
-    <span class="eyebrow">Try it yourself</span>
+    <p class="section-kicker">Try It Yourself</p>
     <h2 class="section-title">🧪 The Validation Lab</h2>
-    <p class="section-sub">No GPU, no dataset download. Trains real VGG16/ResNet50 transfer-learning models on an open, procedurally generated silhouette-proxy dataset, runs the trust simulation, and produces every chart above.</p>
+    <p class="section-subtitle">No GPU, no dataset download. Trains real VGG16/ResNet50 transfer-learning models
+      on an open, procedurally generated silhouette-proxy dataset, runs the trust simulation, and produces every
+      chart above.</p>
 
-    <div class="lab-cta reveal">
-      <h3 style="margin-top:0">Run the full pipeline in one command</h3>
-      <div class="code-block"><span class="cmt"># clone, install, run</span><br>
+    <div class="card is-reveal" style="margin-top:26px;text-align:center;padding:32px">
+      <h3 style="font-family:var(--font-serif);font-size:1.5rem">Run the full pipeline in one command</h3>
+      <div class="code-block" style="text-align:left;max-width:640px;margin:18px auto"><span class="cmt"># clone, install, run</span><br>
 git clone https://github.com/ANIS151993/Trust-Based-Video-Management-Framework-for-Social-Multimedia-Networks.git<br>
 cd Trust-Based-Video-Management-Framework-for-Social-Multimedia-Networks/lab<br>
 pip install -r requirements.txt<br>
 python run_lab.py</div>
-      <div class="btn-row" style="justify-content:center">
+      <div class="hero-actions" style="justify-content:center">
         <a class="btn btn-primary" href="https://github.com/ANIS151993/Trust-Based-Video-Management-Framework-for-Social-Multimedia-Networks/blob/main/lab/Trust_Based_Lab.ipynb" target="_blank" rel="noopener">▶ Open in Colab / Jupyter</a>
-        <a class="btn btn-ghost" href="https://github.com/ANIS151993/Trust-Based-Video-Management-Framework-for-Social-Multimedia-Networks/tree/main/lab" target="_blank" rel="noopener">📁 Browse lab source</a>
+        <a class="btn btn-secondary" href="https://github.com/ANIS151993/Trust-Based-Video-Management-Framework-for-Social-Multimedia-Networks/tree/main/lab" target="_blank" rel="noopener">📁 Browse lab source</a>
       </div>
     </div>
   </div>
 </section>
 
-<section id="paper" style="background:var(--surface-2)">
+<section class="section section-alt" id="paper">
   <div class="container">
-    <span class="eyebrow">Publication</span>
-    <h2 class="section-title">📄 Read the full paper</h2>
-    <p class="section-sub"><strong>Trust-Based Video Management Framework for Social Multimedia Networks</strong> — Md Anisur Rahman Chowdhury, Samuel Tweneboah-Koduah. IEEE conference format.</p>
-    <div class="btn-row">
-      <a class="btn btn-primary" href="assets/paper/main.pdf" target="_blank" rel="noopener">📕 Download PDF</a>
-      <a class="btn btn-ghost" href="https://github.com/ANIS151993/Trust-Based-Video-Management-Framework-for-Social-Multimedia-Networks/blob/main/paper/main.tex" target="_blank" rel="noopener">📖 View LaTeX source</a>
+    <p class="section-kicker">Accepted Manuscript</p>
+    <h2 class="section-title">Camera-ready paper and LaTeX source</h2>
+    <p class="section-subtitle">The IEEE-format paper (11 pages) is available in both PDF and LaTeX source
+      formats. Full documents are encrypted and accessible through the secure download gate.</p>
+
+    <div class="paper-preview-shell">
+      <article class="paper-sheet is-reveal">
+        <div class="paper-topline">
+          <span>IEEE Conference Format</span>
+          <span>Trust-Based VMF</span>
+        </div>
+        <h3 class="paper-title">Trust-Based Video Management Framework for Social Multimedia Networks</h3>
+        <p class="paper-authors"><strong>Md Anisur Rahman Chowdhury</strong> and <strong>Samuel Tweneboah-Koduah</strong></p>
+        <p class="paper-affiliation">Dept. of Computer and Information Science, Gannon University, USA</p>
+
+        <div class="paper-columns">
+          <div>
+            <h4>Abstract</h4>
+            <p>A comprehensive trust-based video management framework integrating dynamic trust evaluation with
+              deep learning-based weapon detection to enable proactive content moderation in Social Multimedia
+              Networks.</p>
+            <p>VGG16 achieves 100% classification accuracy with robust generalization, significantly
+              outperforming ResNet50 (24% test accuracy).</p>
+          </div>
+          <div>
+            <h4>Highlights</h4>
+            <p>Reduces manual moderation overhead by 60%, accelerates harmful-content detection by 85%, and
+              maintains 99.7% weapon-detection recall with zero integrity violations across 10,000 simulated
+              uploads.</p>
+            <p>The camera-ready PDF and complete LaTeX source package are available through the secure download
+              gate.</p>
+          </div>
+        </div>
+
+        <div class="paper-lock">🔒 The full paper (PDF) and LaTeX source archive are password-protected. Use the
+          secure download gate to request access.</div>
+
+        <div class="hero-actions" style="margin-top:18px;justify-content:center">
+          <button class="btn btn-primary" type="button" data-open-gate>🔐 Secure Downloads (PDF + LaTeX Source)</button>
+        </div>
+      </article>
+
+      <aside class="policy-card is-reveal">
+        <h3>Download policy</h3>
+        <p>All documents are encrypted (password-protected ZIP) and require a password to extract. Complete the
+          secure gate to access the camera-ready PDF and LaTeX source archive.</p>
+        <ol class="policy-list">
+          <li>Follow the author on GitHub.</li>
+          <li>Watch the demo video.</li>
+          <li>Send a password request email to the author.</li>
+          <li>Use the password to unlock and extract the encrypted archives.</li>
+        </ol>
+        <div class="hero-actions">
+          <button class="btn btn-primary btn-block" type="button" data-open-gate>Open secure download gate</button>
+          <a class="btn btn-secondary btn-block" href="https://github.com/ANIS151993/Trust-Based-Video-Management-Framework-for-Social-Multimedia-Networks/blob/main/paper/main.tex" target="_blank" rel="noopener">View LaTeX source on GitHub</a>
+        </div>
+      </aside>
     </div>
   </div>
 </section>
 
-<section id="video">
+<section class="section" id="video">
   <div class="container">
-    <span class="eyebrow">Watch it in action</span>
+    <p class="section-kicker">Watch It In Action</p>
     <h2 class="section-title">🎬 Demo video</h2>
-    <div class="video-wrap reveal">
+    <div class="video-frame is-reveal">
       <iframe src="https://www.youtube.com/embed/TSEThVK2ALI" title="Trust-Based Video Management Framework demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
     </div>
   </div>
 </section>
 
-<section id="team" style="background:var(--surface-2)">
+<section class="section section-alt" id="team">
   <div class="container">
-    <span class="eyebrow">Author</span>
-    <h2 class="section-title">👤 Md Anisur Rahman Chowdhury</h2>
-    <div class="card profile-card reveal">
+    <p class="section-kicker">Author</p>
+    <h2 class="section-title">Md Anisur Rahman Chowdhury</h2>
+    <div class="card profile-card is-reveal" style="margin-top:26px">
       <div class="avatar">MARC</div>
       <div>
-        <p style="margin:0 0 4px;color:var(--ink);font-weight:700">Researcher · Dept. of Computer and Information Science</p>
-        <p style="margin:0">Trust &amp; security in social multimedia networks, applied deep learning, secure content delivery.</p>
+        <p style="margin:0 0 4px;color:var(--ink);font-weight:800">Researcher · Dept. of Computer and Information Science</p>
+        <p style="margin:0;color:var(--ink-soft)">Trust &amp; security in social multimedia networks, applied deep learning, secure content delivery.</p>
         <div class="profile-links">
-          <a class="chip" href="https://linkedin.com/in/md-anisur-rahman-chowdhury-15862420a" target="_blank" rel="noopener">🔗 LinkedIn</a>
-          <a class="chip" href="https://github.com/ANIS151993" target="_blank" rel="noopener">💻 GitHub</a>
-          <a class="chip" href="https://scholar.google.com/citations?user=NQyywPoAAAAJ" target="_blank" rel="noopener">🎓 Google Scholar</a>
-          <a class="chip" href="https://researchgate.net/profile/Md-Anisur-Rahman-Chowdhury" target="_blank" rel="noopener">📚 ResearchGate</a>
-          <a class="chip" href="https://marcbd.com" target="_blank" rel="noopener">🌐 Portfolio</a>
+          <a class="pill" href="https://linkedin.com/in/md-anisur-rahman-chowdhury-15862420a" target="_blank" rel="noopener">🔗 LinkedIn</a>
+          <a class="pill" href="https://github.com/ANIS151993" target="_blank" rel="noopener">💻 GitHub</a>
+          <a class="pill" href="https://scholar.google.com/citations?user=NQyywPoAAAAJ" target="_blank" rel="noopener">🎓 Google Scholar</a>
+          <a class="pill" href="https://researchgate.net/profile/Md-Anisur-Rahman-Chowdhury" target="_blank" rel="noopener">📚 ResearchGate</a>
+          <a class="pill" href="https://marcbd.com" target="_blank" rel="noopener">🌐 Portfolio</a>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<footer>
-  <div class="container footer-grid">
-    <div>© <span id="year"></span> Md Anisur Rahman Chowdhury. All rights reserved (paper content &amp; figures). Code licensed under MIT.</div>
-    <div class="btn-row">
-      <a class="chip" href="https://github.com/ANIS151993/Trust-Based-Video-Management-Framework-for-Social-Multimedia-Networks" target="_blank" rel="noopener">GitHub Repo</a>
-      <a class="chip" href="#top">Back to top ↑</a>
+<footer class="footer">
+  <div class="footer-inner">
+    <div>Trust-Based Video Management Framework — Research Portal</div>
+    <div style="display:flex;gap:16px;flex-wrap:wrap">
+      <a href="https://github.com/ANIS151993/Trust-Based-Video-Management-Framework-for-Social-Multimedia-Networks" target="_blank" rel="noopener">GitHub Repo</a>
+      <a href="mailto:engr.aanis@gmail.com">engr.aanis@gmail.com</a>
+      <a href="#top">Back to top ↑</a>
     </div>
   </div>
+  <div class="copyright-bar">© <span id="year"></span> Md Anisur Rahman Chowdhury. All rights reserved (paper content &amp; figures). Code licensed under MIT.</div>
 </footer>
+
+<!-- Secure download gate -->
+<div class="gate-overlay is-hidden" id="download-gate">
+  <div class="gate-modal" role="dialog" aria-modal="true" aria-labelledby="gate-title">
+    <div class="gate-head">
+      <div>
+        <h3 id="gate-title">Secure download gate</h3>
+        <p>Complete the public policy steps, then unlock the encrypted archives.</p>
+      </div>
+      <button class="gate-close" type="button" aria-label="Close download gate" onclick="closeGate()">&times;</button>
+    </div>
+
+    <div class="gate-steps">
+      <section class="download-step" data-gate-step="1">
+        <span class="step-badge">Step 1</span>
+        <h4>Follow the public channels</h4>
+        <p>Open the GitHub profile and demo video first, then confirm the two checks below.</p>
+        <div class="hero-actions">
+          <a class="btn btn-dark btn-block" href="https://github.com/ANIS151993" target="_blank" rel="noopener">Open GitHub profile</a>
+          <a class="btn btn-dark btn-block" href="https://youtu.be/TSEThVK2ALI" target="_blank" rel="noopener">Open demo video</a>
+        </div>
+        <label class="gate-check"><input id="gate-github" type="checkbox"> I followed the GitHub profile.</label>
+        <label class="gate-check"><input id="gate-video" type="checkbox"> I watched the demo video.</label>
+        <div class="gate-actions">
+          <button class="btn btn-primary btn-block" id="gate-next-1" type="button" onclick="continueGate(2)">Continue</button>
+        </div>
+      </section>
+
+      <section class="download-step is-hidden" data-gate-step="2">
+        <span class="step-badge">Step 2</span>
+        <h4>Request the password</h4>
+        <p>Send a short request email so the author can verify the purpose of access before sharing the archive
+          password.</p>
+        <a class="btn btn-dark btn-block" href="mailto:engr.aanis@gmail.com?subject=Password%20request%20for%20Trust-Based%20VMF%20research%20download">Email the author</a>
+        <div class="email-template">Subject: Password request for Trust-Based VMF research download
+
+Hello Md Anisur Rahman Chowdhury,
+I followed the GitHub profile, watched the demo video, and would like the password for the encrypted paper/LaTeX archive.
+Name:
+Institution:
+Purpose of use:</div>
+        <button class="copy-btn" type="button" onclick="copyEmailTemplate(this)">Copy email template</button>
+        <label class="gate-check"><input id="gate-request" type="checkbox"> I sent the password request email.</label>
+        <div class="gate-actions">
+          <button class="btn btn-secondary btn-block" type="button" onclick="goToGateStep(1)">Back</button>
+          <button class="btn btn-primary btn-block" id="gate-next-2" type="button" onclick="continueGate(3)">Continue</button>
+        </div>
+      </section>
+
+      <section class="download-step is-hidden" data-gate-step="3">
+        <span class="step-badge">Step 3</span>
+        <h4>Enter the password</h4>
+        <p>The archives remain encrypted after download. Enter the password here to reveal the links once you
+          have received it from the author.</p>
+        <input class="gate-input" id="gate-password" type="password" placeholder="Enter the archive password">
+        <p class="gate-error is-hidden" id="gate-error">The password is incorrect. Request the correct password
+          from the author and try again.</p>
+        <div class="gate-actions">
+          <button class="btn btn-secondary btn-block" type="button" onclick="goToGateStep(2)">Back</button>
+          <button class="btn btn-primary btn-block" type="button" onclick="unlockDownloads()">Unlock downloads</button>
+        </div>
+      </section>
+
+      <section class="download-step is-hidden" data-gate-step="4">
+        <span class="step-badge">Unlocked</span>
+        <h4>Encrypted files ready</h4>
+        <p>All archives are encrypted. Use the same password to extract the contents after download.</p>
+        <div class="download-links">
+          <a class="btn btn-primary btn-block" href="assets/papers/Trust-Based-VMF-Paper-Encrypted.zip">Download encrypted paper (PDF)</a>
+          <a class="btn btn-primary btn-block" href="assets/papers/Trust-Based-VMF-LaTeX-Source-Encrypted.zip">Download encrypted LaTeX source</a>
+          <a class="btn btn-dark btn-block" href="#lab">Open the reproducible lab instead</a>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
 
 <div class="lightbox" id="lightbox">
   <button class="lightbox-close" aria-label="Close">✕</button>
   <img id="lightbox-img" src="" alt="">
 </div>
+
+<button class="back-to-top" id="backToTop" type="button" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 16V4M10 4L4 10M10 4L16 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
 
 <script src="assets/js/main.js"></script>
 </body>
