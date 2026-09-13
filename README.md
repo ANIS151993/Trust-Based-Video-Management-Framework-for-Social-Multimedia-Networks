@@ -159,9 +159,10 @@ Or run it with zero setup: **[Open `Trust_Based_Lab.ipynb` in Colab](lab/Trust_B
 **"Trust-Based Video Management Framework for Social Multimedia Networks"**
 Md Anisur Rahman Chowdhury¹, Samuel Tweneboah-Koduah² — IEEE conference format.
 
-- 📖 [LaTeX source](paper/main.tex) · 📕 [Compiled PDF](paper/main.pdf) — both open in this repository
-- 📦 [Complete LaTeX project (.zip)](https://anis151993.github.io/Trust-Based-Video-Management-Framework-for-Social-Multimedia-Networks/assets/papers/Trust-Based-VMF-LaTeX-Source.zip) —
-  `main.tex` plus all figures, ready to compile with `pdflatex` — no request or password needed.
+- 📖 [LaTeX source](paper/main.tex) · 📕 [Compiled PDF](paper/main.pdf) — both browsable in this repository
+- 🔐 [Secure download gate](https://anis151993.github.io/Trust-Based-Video-Management-Framework-for-Social-Multimedia-Networks/#paper) —
+  password-protected ZIP archives (compiled PDF, and the complete LaTeX project with all figures) for readers
+  who want a self-contained, offline copy. See [`SECURITY.md`](SECURITY.md) for the document access policy.
 
 ## 🎬 Demo video
 
