@@ -1,25 +1,4 @@
-// SHA-256 hash of the archive password — the plaintext password is never
-// stored in this file or anywhere in the repository. It is shared manually
-// by the author after the request steps below; this hash only lets the
-// browser confirm a locally-typed guess without ever transmitting or
-// storing the real password.
-const PASS_HASH = "5b484d8b2799daf74779ce686501847d4a08b5e917c1e8395e1da7f7e73bce0d";
-
-const EMAIL_TEMPLATE = `Subject: Password request for Trust-Based VMF research download
-
-Hello Md Anisur Rahman Chowdhury,
-I followed the GitHub profile, watched the demo video, and would like the password for the encrypted paper/LaTeX archive.
-Name:
-Institution:
-Purpose of use:`;
-
 function byId(id) { return document.getElementById(id); }
-
-async function sha256(value) {
-  const data = new TextEncoder().encode(value);
-  const hash = await crypto.subtle.digest("SHA-256", data);
-  return Array.from(new Uint8Array(hash)).map((b) => b.toString(16).padStart(2, "0")).join("");
-}
 
 /* ── Mobile nav ── */
 function toggleNav() {
@@ -131,54 +110,6 @@ function initReveal() {
   }, 2500);
 }
 
-/* ── Secure download gate ── */
-function goToGateStep(step) {
-  document.querySelectorAll("[data-gate-step]").forEach((n) => n.classList.add("is-hidden"));
-  document.querySelector(`[data-gate-step="${step}"]`)?.classList.remove("is-hidden");
-  byId("gate-error")?.classList.add("is-hidden");
-}
-function openGate() {
-  byId("download-gate")?.classList.remove("is-hidden");
-  document.body.classList.add("gate-locked");
-  goToGateStep(1);
-}
-function closeGate() {
-  byId("download-gate")?.classList.add("is-hidden");
-  document.body.classList.remove("gate-locked");
-}
-function gateStepOneReady() {
-  return Boolean(byId("gate-github")?.checked && byId("gate-video")?.checked);
-}
-function gateStepTwoReady() {
-  return Boolean(byId("gate-request")?.checked);
-}
-function continueGate(step) {
-  if (step === 2 && !gateStepOneReady()) return;
-  if (step === 3 && !gateStepTwoReady()) return;
-  goToGateStep(step);
-}
-function syncGateButtons() {
-  const s1 = byId("gate-next-1"); if (s1) s1.disabled = !gateStepOneReady();
-  const s2 = byId("gate-next-2"); if (s2) s2.disabled = !gateStepTwoReady();
-}
-async function unlockDownloads() {
-  const input = byId("gate-password");
-  const error = byId("gate-error");
-  if (!input) return;
-  const hash = await sha256(input.value.trim());
-  if (hash === PASS_HASH) { goToGateStep(4); input.value = ""; return; }
-  error?.classList.remove("is-hidden");
-  input.value = "";
-}
-function copyEmailTemplate(button) {
-  navigator.clipboard.writeText(EMAIL_TEMPLATE.trimEnd()).then(() => {
-    if (!button) return;
-    const prev = button.textContent;
-    button.textContent = "Copied";
-    setTimeout(() => { button.textContent = prev; }, 1500);
-  });
-}
-
 /* ── Chart lightbox ── */
 function initLightbox() {
   const lightbox = byId("lightbox");
@@ -211,12 +142,6 @@ document.addEventListener("DOMContentLoaded", () => {
   initReveal();
   initLightbox();
   onScroll();
-
-  document.querySelectorAll("[data-open-gate]").forEach((btn) => btn.addEventListener("click", openGate));
-  ["gate-github", "gate-video", "gate-request"].forEach((id) => {
-    byId(id)?.addEventListener("change", syncGateButtons);
-  });
-  syncGateButtons();
 
   const yearEl = byId("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();

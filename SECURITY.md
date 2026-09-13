@@ -17,19 +17,3 @@ This policy covers the code in this repository (`lab/`, `docs/`, build tooling).
 synthetic dataset generator (`lab/data/synthetic_dataset.py`) produces procedural
 placeholder imagery only and contains no real weapon photography — see
 [`lab/README.md`](lab/README.md) for details.
-
-## Document access policy
-
-The camera-ready paper (PDF) and LaTeX source bundle are distributed as password-protected
-ZIP archives (see the [`#paper`](https://anis151993.github.io/Trust-Based-Video-Management-Framework-for-Social-Multimedia-Networks/#paper)
-section of the project site). This is a lightweight access-friction measure, **not** a
-confidentiality guarantee — standard ZipCrypto encryption is not resistant to a determined
-offline attacker. Its purpose is to let the author track who requests the camera-ready
-files and to discourage casual bulk-scraping, not to protect sensitive information (the
-paper is also citable and readable in full via the compiled PDF and LaTeX source already
-public in this repository's `paper/` directory).
-
-The archive password is shared manually by the author after a short request flow (see the
-site's secure download gate) and is never stored in plaintext anywhere in this repository
-— only its SHA-256 hash ships in `docs/assets/js/main.js`, used solely for a client-side
-confirmation check.
